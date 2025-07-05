@@ -1,0 +1,247 @@
+@import "../../partials/variables";
+@import "../../partials/mixins";
+
+
+footer{
+    .footer-top{
+        padding: 50px 0;
+        background: $gradient;
+
+        .row{
+            @include grid(repeat(3, 1fr));
+            gap: 30px;
+
+            @include respond-to(small){
+                @include grid(subgrid);
+            }
+
+            .row-inner{
+                @include flex(flex-start);
+
+                p{
+                    margin-top: 10px;
+                    margin-left: 15px;
+                    color: $primary-text-color;
+                    
+                }
+            }
+            .last-row{
+
+                a{
+                    @include transition;
+                    cursor: pointer;
+                    color: $yellow-color;
+                    font-weight: $font-weight-medium;
+
+                    &:hover{
+                        color: $white;
+                    }
+
+                }
+            }
+        }
+
+        
+    }
+    .footer-1{
+        background-color: #2b3239;
+        color: $primary-text-color;
+
+        .row{
+            padding: 90px 0;
+            @include grid(1fr 1fr);
+            gap: 70px;
+
+            @include respond-to(small){
+                @include grid(subgrid);
+            }
+
+            h4{
+                margin-bottom: 30px;
+            }
+            .about-thumb {
+                padding-left: 30px;
+
+                .about-thumb-inner {
+                    display: inline-block;
+                    position: relative;
+
+                    img{
+                        @include respond-to(small){
+                            width: 200px;
+                        }
+                    }
+
+                    .about-thumb-line {
+                        @include border-radius(50%);
+                        position: absolute;
+                        border: 1px solid #425b5c;
+
+                        &::before, 
+                        &::after {
+                            @include border-radius(50%);
+                            position: absolute;
+                            content: '';
+                        }
+                        &::before{
+                            width: 12px;
+                            height: 12px;
+                            background-color: $white;
+                        }
+                        &::after{
+                            width: 20px;
+                            height: 20px;
+                            background-color: $accent-dark;
+                        }
+                    }
+                    .about-thumb-line-one {
+                        width: calc(100% + 30px);
+                        height: calc(100% + 30px);
+                        top: -15px;
+                        left: -15px;
+                        animation: spin 12s infinite linear;
+                        -webkit-animation: spin 12s infinite linear;
+
+                        &::before {
+                            top: -6px;
+                            left: 50%;
+                            margin-left: -6px;
+                        }
+                        &::after {
+                            top: 50%;
+                            left: -10px;
+                            margin-top: -10px;
+                        }
+                    }
+                    .about-thumb-line-two {
+                        width: calc(100% + 60px);
+                        height: calc(100% + 60px);
+                        top: -30px;
+                        left: -30px;
+                        animation: spin2 7s infinite linear;
+                        -webkit-animation: spin2 7s infinite linear;
+
+                        &::before {
+                            bottom: -6px;
+                            left: 50%;
+                            margin-left: -6px;
+                        }
+                        &::after {
+                            right: -10px;
+                            top: 50%;
+                            margin-top: -10px;
+                        }
+
+                        @keyframes spin2 {
+                            0% {
+                                @include transform(0)
+                            }
+                            100% {
+                                @include transform(-360deg)
+                            }
+                        }
+                    }
+
+                }
+            }
+            label{
+                font-size: 0.9rem;
+            }
+            input{
+                @include input-style;
+                color: $primary-text-color;
+            }
+            a{
+                p{
+                    display: flex;
+                    @include transition;
+
+                    i{
+                        font-size: 1rem;
+                        margin-right: 12px;
+                        @include transition;
+                    }
+                    
+                    &:hover i{
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+
+        
+    }
+    .footer-2{
+        padding: 50px 0;
+
+        @include respond-to(small){
+            text-align: center;
+        }
+
+        .row{
+            @include grid(3fr 1fr);
+
+            @include respond-to(small){
+                @include grid(subgrid);
+            }
+
+            .links{
+                @include flex(flex-start);
+                margin-bottom: 20px;
+
+                a{
+                    margin-right: 20px;
+                    @include transition;
+                    
+                    &:hover{
+                        color: $accent-color;
+                    }
+
+                    .dark-mode &{
+                        color: $dark-text-color;
+                        @include transition;
+
+                        &:hover{
+                            color: $accent-color;
+                        }
+                    }
+                }
+            }
+            .rem{
+            @include respond-to(small){
+                display: none
+            } 
+            }
+            .social-link {
+                @include flex(flex-start);
+                margin-top: 20px;
+
+                @include respond-to(small){
+                    @include flex(center);
+                } 
+
+                a{
+                    margin-right: 15px;
+
+                    i{
+                        font-size: 1.5rem;
+                        @include transition;
+
+                        &:hover{
+                            color: $accent-color;
+                        }
+
+                        .dark-mode &{
+                            color: $dark-text-color;
+                            @include transition;
+
+                            &:hover{
+                                color: $accent-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

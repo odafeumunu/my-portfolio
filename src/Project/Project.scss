@@ -1,0 +1,44 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.projects{
+    position: relative;
+    padding-top: 50px;
+
+    .content-flex{
+        @include grid(1.2fr 1fr);
+        gap: 50px 30px;
+        margin-top: 50px;
+
+        @include respond-to(medium){
+            @include grid(1fr)
+        }
+        p{
+            margin: 40px 0;
+        }
+        a{
+            color: $accent-color;
+            font-size: 1rem;
+            font-weight: $font-weight-medium;
+        }
+    }
+    .code-flex{
+        @include grid(repeat(3, 1fr));
+        gap: 30px;
+
+        @include respond-to(medium){
+            @include grid(1fr 1fr)
+        }
+        @include respond-to(small){
+            @include grid(1fr)
+        }
+    }  
+}
+.dark-bg{
+    background: $dark_bg_dark;
+
+    .dark-mode &{
+        background: $light_bg_sm_dark;
+        color: $dark-text-color;
+    }
+}

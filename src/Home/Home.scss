@@ -1,0 +1,244 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.hero{
+    position: relative;
+    height: calc(100vh - 100px);
+    @include flex(center);
+
+    @include respond-to(small){
+        text-align: center;
+    }
+    
+    .flex-content{
+        @include noise;
+        position: absolute;
+        left: 100px;
+        top: 0;        
+        right: 100px;
+        height: 100%;
+        @include flex(center);
+        z-index: -1;
+        pointer-events: none;
+
+        .animate{
+            position: relative;
+            display: inline-block;
+            background: radial-gradient(circle at top right, purple, cyan);
+            @include border-radius(50%);
+            padding: 15px;
+            animation: linear animate infinite;
+            animation-duration: calc(12s / var(--i));
+
+            &:nth-child(odd){
+                background: radial-gradient(circle at top right, rgb(128, 0, 100), rgb(153, 0, 255));
+            }
+
+            @keyframes animate {
+                0%{transform: translateY(170px) scale(1);}
+                100%{transform: translateY(-200px) scale(0);}
+            }
+        }
+
+        @include respond-to(small){
+          left: 10px;
+          right: 10px;  
+          animation: none;
+        }
+
+    }
+    .hero-container{
+        span{
+            display: block;
+            color: $accent-color;
+        }
+        p{            
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: $font-weight-medium;
+            text-align: center;
+        }
+    }
+    
+}
+
+.about-container{
+    .container{
+        @include grid(1fr 1fr);
+        gap: 40px;
+
+        @include respond-to(small){
+            grid-template-columns: 1fr;
+        }
+
+        .row{
+           .row-inner{
+                background: none;
+                max-width: 500px;
+                height: 400px;
+                position: relative;
+                box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+                overflow: hidden;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 50px;
+                    bottom: 50px;
+                    left: -10px;
+                    width: 50px;
+                    box-shadow: inset 3px 3px 6px -1px rgba($black, 0.2),
+                            inset -3px -3px 6px -1px rgba($black, 0.2);
+                }
+                img{
+                    height: 95%;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    filter: drop-shadow(0px 0px 10px $accent-dark);
+                }                
+            }
+            p{
+                text-align: justify;
+            }
+        }       
+    }
+}
+
+.project-container{
+    position: relative;
+    overflow: hidden;
+
+    .row{
+        margin-top: 100px;
+        @include grid(repeat(3, 1fr));
+
+        @include respond-to(medium){
+            @include grid(repeat(2, 1fr))
+        }
+        @include respond-to(small){
+            @include grid(1fr)
+        }
+        @include respond-to(extra-small){
+            @include grid(1fr)
+        }
+
+        .project{
+            position: relative;            
+            
+            .project-image{
+                display: flex;
+                
+                img{
+                    width: 100%;
+                }
+            }  
+            .project-inner{
+                position: absolute;
+                left: 0;
+                width: 100%;
+                top: 0;
+                height: 100%;
+                color: $white;
+                text-align: center;
+                cursor: pointer;
+                @include flex(center);
+                @include transition;
+                opacity: 0;
+                z-index: 5;
+
+                @include respond-to(small){
+                    background-color: rgba($black, 0.5);
+                    opacity: 1;
+                }
+
+                &:hover{
+                    background-color: rgba($black, 0.5);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.service-container{
+    position: relative;
+
+    .row{
+        margin-top: 50px;
+        padding-bottom: 30px;
+
+        .service{
+            position: relative;
+            @include border-radius(5px);
+            box-shadow: 0px 0px 10px rgba($accent-dark, 0.7);
+            overflow: hidden;
+
+            .img-text{                
+                position: relative;
+                margin-bottom: 30px;
+                
+                img{
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                }
+                .txt{
+                    position: absolute;
+                    left: 30%;
+                    bottom: -30px;
+                    text-align: center;
+                    padding: 15px;
+                    @include border-radius(5px);
+                    background-color: $dark_bg;
+                    box-shadow: 0px 0px 10px rgba($accent-dark, 0.7);
+
+                    .dark-mode &{
+                        background-color: $light_bg;
+                    }
+                }
+            }
+
+            .service-inner-text{
+                padding: 20px;
+
+                p{
+                    text-align: justify;
+                    margin: 15px 0;
+                }
+                a{
+                    font-weight: $font-weight-medium;
+                    color: $accent-color;
+                    @include transition;
+
+                    &:hover{
+                        transform: scale(1.05);
+                        filter: drop-shadow(0px 0px 10px rgba($accent-dark, 0.7));
+                    }
+                }
+            }
+        }
+    }
+}
+
+.summary-container{
+    position: relative;
+
+    .row{
+        @include grid(1fr 1fr 1fr);
+        text-align: center;
+        gap: 50px;
+
+        @include respond-to(small){
+            @include grid(1fr 1fr);
+        }
+
+         @include respond-to(extra-small){
+            @include grid(1fr);
+        }
+
+        h3{
+            margin-bottom: 15px;
+        }
+    }
+}

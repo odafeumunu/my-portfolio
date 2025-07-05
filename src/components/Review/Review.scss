@@ -1,0 +1,92 @@
+@import "../../partials/variables";
+@import "../../partials/mixins";
+
+
+.review-container{
+    position: relative;
+
+    .mobile-flip{
+        margin: 40px 0 10px 0;
+        display: none;
+
+        @include respond-to(small){
+            display: block;
+        }
+    }
+
+    .flipper{
+        width: 100%;
+        height: 300px;
+        position: relative;
+        margin-top: 100px;
+
+        @include respond-to(small){
+            display: block;
+            margin-top: 0;
+        }
+
+        .front, 
+        .back{
+            width: 100%;
+            @include flex(center);
+            flex-direction: column;
+            position: absolute;
+            top: -70px;
+            backface-visibility: hidden;
+            @include transition;
+
+            .image {
+                height: 100px;
+                width: 100px;
+                @include border-radius(50%);
+                overflow: hidden;
+                background-color: $dark_bg_dark;
+                border: 2px solid $dark_bg_dark;
+                @include flex(center);
+                transform: translateY(40px);
+
+                .dark-mode &{
+                    background-color: $light_bg_sm_dark;
+                    border-color: $light_bg_sm_dark;
+                }
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            } 
+            .text-card{
+                text-align: center;
+                background: $dark_bg_dark;
+                @include flex(center);
+                flex-direction: column;
+                width: 100%;
+                height: 300px;
+                padding: 0 15px;
+                z-index: -1;
+
+                .dark-mode &{
+                    background-color: $light_bg_sm_dark;
+                }
+
+                h4{
+                    margin: 15px;
+                }
+            }            
+        }
+        .front{
+            transform: perspective(600px) rotateY(0deg);
+        }
+        .back{
+            transform: perspective(600px) rotateY(180deg);
+        }
+        &:hover .front{
+            transform: perspective(600px) rotateY(-180deg);
+        }
+        &:hover .back{
+            transform: perspective(600px) rotateY(0deg);
+        }
+    }
+    
+}

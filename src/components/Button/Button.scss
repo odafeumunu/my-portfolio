@@ -1,0 +1,68 @@
+@import "../../partials/variables";
+@import "../../partials/mixins";
+
+.btn{
+    position: relative;
+    display: inline-block;
+    margin: 20px 0;
+    outline: none;
+    border: 2px solid $accent-color;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
+    @include border-radius(4px);
+    color: $accent-color;
+    background-color: transparent;
+    text-transform: capitalize;
+    @include transition;
+
+    &:hover{
+        box-shadow: 0px 2px 10px $accent-dark;
+    }
+
+    &::before{
+        @include pseudo;
+        left: 80%;
+        top: -6px;
+    }
+
+    &:hover::before{
+        left: 10%;
+    }
+
+    &::after{
+        @include pseudo;
+        left: 10%;
+        bottom: -6px;
+    }
+    &:hover::after{
+        left: 80%;
+    }
+
+    span{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+
+        &::before{
+            @include pseudo2;
+            left: -6px;
+            top: 10%;
+        }
+        &:hover::before{
+            top: 60%;
+        }
+
+        &::after{
+            @include pseudo2;
+            right: -6px;
+            top: 60%;
+        }
+        &:hover::after{
+            top: 10%;
+        }
+    }
+}

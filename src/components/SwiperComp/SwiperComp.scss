@@ -1,0 +1,46 @@
+@import "../../partials/variables";
+@import "../../partials/mixins";
+
+.swiper {
+    position: relative;
+
+    
+    .swiper-inner{
+        padding: 50px 10px;
+    }
+
+    .custom-next,
+    .custom-prev {
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 45px;
+        height: 45px;
+        background-color: rgba(0, 0, 0, 0.5);
+        @include border-radius(50%);
+        cursor: pointer;
+        @include flex(center);
+        opacity: 0;
+        @include transition;
+        font-size: 1.2rem;
+        font-weight: $font-weight-bold;
+        color: $white;
+
+        @include respond-to(small){
+            opacity: 1;
+        }
+    }
+    .custom-prev{
+        left: 10px;
+    }
+    .custom-next{
+        right: 10px;
+    }
+    &:hover .custom-next,
+    &:hover .custom-prev {
+        opacity: 1;
+    }
+    
+}

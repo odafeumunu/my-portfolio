@@ -1,0 +1,27 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.contact-form {
+  @include grid(1fr 1fr);
+  align-items: flex-start;
+  gap: 60px 40px;
+
+  @include respond-to(medium) {
+    @include grid(1fr);
+  }
+
+  form {
+    position: relative;
+
+    input,
+      textarea {
+        @include input-style;
+        background-color: transparent;
+        border: 1px solid $light-grey;
+
+        &::placeholder {
+          font-size: 0.9rem;
+        }
+      }
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../partials/variables";
+@import "../../partials/mixins";
+
+
+.to-top {
+    position: fixed;
+    right: -200px;
+    bottom: 20px;
+    @include flex(center);
+    width: 50px;
+    height: 50px;
+    @include border-radius(50%);
+    background: $white;
+    @include transition;
+    cursor: pointer;
+    pointer-events: none;
+    z-index: 90;
+    box-shadow: $box-shadow2;
+
+    &.reveal {
+        @include transition;
+        pointer-events: auto;
+        right: 20px;
+
+        &:hover{
+            transform: translateY(-10px);
+        }
+    }
+
+    i {
+        color: $dark-text-color;
+    }
+}

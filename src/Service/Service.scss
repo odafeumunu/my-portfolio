@@ -1,0 +1,123 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+
+.about{
+    position: relative;
+
+    .container{
+        @include grid(1fr 1fr);
+        gap: 40px;
+
+        @include respond-to(small){
+            grid-template-columns: 1fr;
+        }
+
+        .row{
+           .row-inner{
+                background: none;
+                max-width: 500px;
+                height: 400px;
+                position: relative;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: -100px;
+                    border: 300px solid;
+                    border-color: transparent transparent transparent $dark-bg;
+
+                    .dark-mode &{
+                        border-color: transparent transparent transparent $light-bg;
+                    }
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 35px;
+                    width: 100%;
+                    background-color: $dark-bg;
+
+                    .dark-mode &{
+                        background-color: $light-bg;
+                    }
+                }
+                img{
+                    height: 95%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }                
+            }
+            p{
+                text-align: justify;
+            }
+        }       
+    }
+}
+.service{
+    position: relative;
+
+    .row{
+        margin-top: 100px;
+
+        .row-inner{
+            @include grid(1fr 1.5fr);
+            gap: 30px;
+            margin-bottom: 100px;
+            padding-bottom: 50px;
+            border-bottom: 2px dashed $dark_bg;
+
+            &:last-child{
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            @include respond-to(small){
+                @include grid(1fr);
+            }
+
+            .image-col{
+                position: relative;
+
+                
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .text-col{
+                h3{
+                    color: $accent-color;
+                    position: relative;
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        left: 5px;
+                        bottom: -15px;
+                        border: 8px solid;
+                        border-color: $accent-color transparent transparent transparent;
+                        animation: 1s anim linear infinite;
+                    }
+                    @keyframes anim {
+                        0%{ transform: translateY(0px) scale(1) }
+                        100%{ transform: translateY(5px) scale(0.5)}
+                    }
+
+                }
+                span{
+                    font-size: 1rem;
+                    display: block;
+                    margin: 35px 0;
+                }
+            }
+        }
+    }
+}
