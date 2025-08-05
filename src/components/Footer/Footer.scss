@@ -12,7 +12,7 @@ footer{
             gap: 30px;
 
             @include respond-to(small){
-                @include grid(subgrid);
+                @include grid(1fr);
             }
 
             .row-inner{
@@ -53,7 +53,7 @@ footer{
             gap: 70px;
 
             @include respond-to(small){
-                @include grid(subgrid);
+                @include grid(1fr);
             }
 
             h4{
@@ -182,7 +182,7 @@ footer{
             @include grid(3fr 1fr);
 
             @include respond-to(small){
-                @include grid(subgrid);
+                @include grid(1fr);
             }
 
             .links{
