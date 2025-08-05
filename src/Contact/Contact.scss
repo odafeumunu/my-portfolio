@@ -1,5 +1,5 @@
-@import "../partials/variables";
-@import "../partials/mixins";
+@use "../partials/variables" as *;
+@use "../partials/mixins" as *;
 
 .contact-form {
   @include grid(1fr 1fr);
