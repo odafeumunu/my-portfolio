@@ -43,15 +43,15 @@
                 position: fixed;
                 top: 90px;
                 height: 100vh;
-                background-color: lighten($dark-bg, 5%);
+                background-color: $lightened-bg;
                 z-index: 9999;
-                display: block;
+                display: block; 
                 right: -9000px;
                 width: 100%;
                 @include transition(0.6s);
 
                 .dark-mode &{
-                    background-color: darken($light_bg, 1%);
+                    background-color: $darkened_bg;
                 }
             }            
 
@@ -125,7 +125,7 @@
                 width: 60px;
                 padding: 0 8px;
                 border-radius: 25px;
-                background-color: lighten($dark_bg, 5%);
+                background-color: $lightened-bg;
                 cursor: pointer;
                 margin-left: 10px;
 

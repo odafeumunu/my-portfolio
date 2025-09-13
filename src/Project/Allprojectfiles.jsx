@@ -18,6 +18,17 @@ export const projects = [
       "To add dynamic functionality, I integrated JavaScript for interactive features like a real-time booking form and a responsive navigation bar. For the backend, I used PHP to handle server-side operations, such as storing and retrieving booking data securely. The seamless connection between the frontend and backend ensured a smooth user experience, while keeping customer data secure. By combining these technologies, I delivered a robust and visually engaging website that effectively showcases the hotel's services and allows visitors to book with ease.",
   },
   {
+    name: "Movie",
+    color: "",
+    link: "https://szmovie-app.netlify.app",
+    code: "/project/movie",
+    image: pro4,
+    desc1:
+      "The movie website project involved building a dynamic and responsive platform using React.js and Tailwind, focusing on delivering seamless access to a vast movie database. I structured the app with reusable components to ensure maintainability and efficient rendering. By integrating the TMDB API, I enabled real-time fetching and display of up-to-date movie information, including posters, ratings, and descriptions. The interface was designed with user experience in mind, featuring intuitive navigation and clean layouts that highlight the cinematic content. Responsive design principles were applied to guarantee optimal usability across various devices, from smartphones to desktops.",
+    desc2:
+      "To enhance functionality, I implemented a robust search feature allowing users to quickly find movies by title, with live suggestions improving the discovery process. The app also connects with Supabase to manage user data and preferences, facilitating a personalized experience. Additional interactive elements such as movie detail modals and pagination were included to streamline browsing. By combining React’s component-driven architecture with real-time API data and backend integration, I created a modern and engaging movie platform that provides users with rich content and smooth interactivity.",
+  },
+  {
     name: "Lendsqr",
     color: "dark-bg",
     link: "https://umunu-odafe-peter-lendsqr-fe-test.netlify.app",
@@ -27,17 +38,6 @@ export const projects = [
       "The Lendsqr project was a rewarding opportunity to showcase my skills in TypeScript and SCSS while building a modern, responsive web application. Using TypeScript, I created strongly-typed components in React, ensuring better code maintainability and reducing runtime errors. This approach allowed me to handle complex state management and API integration seamlessly, especially when working with mock data for the dashboard and user details. By leveraging TypeScript's static typing, I was able to build a robust application with confidence in the accuracy of my code.",
     desc2:
       "For styling, I utilized SCSS to create modular and reusable styles, making it easier to maintain a consistent design across the project. I implemented SCSS features like mixins and variables to simplify styling for the mobile-responsive layout and ensure adherence to the provided design specifications. The project also required implementing dynamic filtering, navigation, and local storage for enhanced user experience. The combination of TypeScript and SCSS allowed me to deliver a clean, functional, and visually appealing application that met all the requirements efficiently.",
-  },
-  {
-    name: "Lifestyle",
-    color: "",
-    link: "https://free-lifestyle.netlify.app",
-    code: "/project/lifestyle",
-    image: pro4,
-    desc1:
-      "The lifestyle website was an exciting project where I focused on creating a visually engaging and user-friendly platform using HTML, CSS, and JavaScript. Starting with a well-structured HTML framework, I ensured the content was accessible and easy to navigate, catering to the needs of a diverse audience. With CSS, I styled the website to reflect a modern and vibrant lifestyle theme, incorporating dynamic layouts, elegant typography, and a carefully selected color palette to capture the brand's essence. I also used media queries to ensure the site was fully responsive and adaptable to various screen sizes, from mobile devices to desktops.",
-    desc2:
-      "To enhance user interactivity, I implemented JavaScript for dynamic features such as a carousel for featured content, smooth scrolling effects, and interactive elements like dropdown menus and popups. These functionalities added a layer of sophistication to the user experience, making the site more engaging. By combining these technologies, I created a visually compelling and fully functional lifestyle website that aligns with the brand's vision and delivers value to its users.",
   },
   {
     name: "Crypto",

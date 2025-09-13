@@ -13,7 +13,7 @@ import Photo from "../assets/photo.webp";
 import img1 from "../assets/1.webp";
 import img2 from "../assets/2.webp";
 import img3 from "../assets/3.webp";
-import img4 from "../assets/4.webp";
+import img4 from "../assets/4.webp"; 
 import img5 from "../assets/5.webp";
 import img6 from "../assets/6.webp";
 import ser1 from "../assets/ser1.webp";
@@ -87,8 +87,8 @@ const services = [
 
 const projects = [
   { id: 1, image: img1, link: "/project/hotel", text: "Hotel" },
-  { id: 2, image: img5, link: "/project/lendsqr", text: "Lendsqr" },
-  { id: 3, image: img4, link: "/project/lifestyle", text: "Lifestyle" },
+  { id: 2, image: img4, link: "/project/movie", text: "Movie App" },
+  { id: 3, image: img5, link: "/project/lendsqr", text: "Lendsqr" },
   { id: 4, image: img3, link: "/project/crypto", text: "Crypto" },
   { id: 5, image: img2, link: "/project/hospital", text: "Hospital" },
   { id: 6, image: img6, link: "/project/car", text: "Car" },
@@ -99,7 +99,7 @@ const skills = [
   { name: "CSS", percentage: 90 },
   { name: "JavaScript", percentage: 75 },
   { name: "React", percentage: 80 },
-  { name: "TypeScript", percentage: 60 },
+  { name: "TypeScript", percentage: 75 },
   { name: "Python", percentage: 80 },
   { name: "Django", percentage: 80 },
   { name: "Flask", percentage: 80 },
@@ -122,8 +122,8 @@ function Home() {
     const typed = new Typed(el.current, {
       strings: [
         "A CREATIVE FRONTEND WEB DEVELOPER",
-        "AN INNOVATIVE WEB DESIGNER",
-        "AN EXPERIENCED WEB DEVELOPER",
+        "AN INNOVATIVE BACKEND WEB DESIGNER",
+        "AN EXPERIENCED FULL-STACK WEB DEVELOPER",
       ],
       typeSpeed: 50,
       backSpeed: 50,
@@ -211,18 +211,18 @@ function Home() {
             className="row">
             <h2 style={{ textAlign: "left" }}>About Me</h2>
             <p>
-              A full-stack web developer skilled in HTML, CSS, JavaScript, and
-              React, as well as Python, Django and Flask. I’ve completed
-              numerous website projects for brands and small businesses,
-              specializing in responsive design and dynamic functionality. I’m
-              passionate about creating user-friendly interfaces and
-              continuously improving my craft. Let’s collaborate! <br />
+              A full-stack web developer experienced in building scalable and
+              user-friendly applications using JavaScript, and Python.
+              I’ve delivered multiple end-to-end website and web app
+              projects for brands, startups, and small businesses — with a focus
+              on responsive design, API integration, and performance.
               <br />
-              I’m passionate about crafting visually engaging and functional web
-              experiences. I love turning ideas into user-friendly designs and
-              experinces that leave a lasting impression. With a strong focus on
-              creativity and continuous learning, I strive to make every project
-              unique and impactful.
+              <br />
+              I’m passionate about crafting seamless digital experiences that
+              combine strong UI design with clean backend logic. I enjoy turning
+              ideas into real products that solve problems and engage users.
+              With a focus on creativity, usability, and continuous learning, I
+              aim to bring value to every project and collaboration.
             </p>
             <Link to="/about">
               <Button>See More</Button>
@@ -240,12 +240,12 @@ function Home() {
           <div className="type-wrap" style={{ textAlign: "center" }}>
             <p className="p-text">
               I have a strong foundation in core web development technologies,
-              including HTML, CSS, JavaScript, React, Python, Django and Flask. I am proficient in CSS
-              preprocessors like SCSS and have experience with front-end
-              frameworks such as Bootstrap and React. I am also familiar with
-              TypeScript and have basic knowledge of PHP. I am constantly
-              learning and expanding my skillset to stay updated with the latest
-              industry trends.
+              including HTML, CSS, JavaScript, Typescript, React, Python, Django and Flask.
+              I am proficient in CSS preprocessors like SCSS and have experience
+              with front-end frameworks such as Bootstrap and React. I am also
+              familiar with TypeScript and have basic knowledge of PHP. I am
+              constantly learning and expanding my skillset to stay updated with
+              the latest industry trends.
             </p>
           </div>
           <div className="row">

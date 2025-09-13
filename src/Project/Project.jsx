@@ -13,7 +13,6 @@ import codeImg from "../assets/codeimg.webp";
 const codeImages = [{ img: codeImg }, { img: codeImg }, { img: codeImg }];
 
 function Project() {
-  // Get the project name from the URL params
   const { name } = useParams();
   // Find the project by name 
   const project = projects.find(
